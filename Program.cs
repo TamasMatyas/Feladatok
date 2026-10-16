@@ -54,9 +54,30 @@
             {
                 szamok[i] = r.Next(a, b);
             }
-
-
-
+            bool vege = true;
+            do
+            {
+                Console.WriteLine("""
+                    a - Növelés
+                    b - Csökkentés
+                    c - Szorzás
+                    d - kilépés
+                    """);
+                Console.Write("Mit szeretne csinálni(a-b-c-d):");
+                string dontes = Console.ReadLine();
+                switch (dontes)
+                {
+                    case "a": Console.Write("Mennyivel szeretné növelni: "); int n = Convert.ToInt32(Console.ReadLine()); for (int i = 0; i < szamok.Length; i++) { szamok[i] += n; } break;
+                    case "b": Console.Write("Mennyivel szeretné csökkenteni: "); int c = Convert.ToInt32(Console.ReadLine()); for (int i = 0; i < szamok.Length; i++) { szamok[i] -= c; } break;
+                    case "c": Console.Write("Mennyivel szeretné szorozni: "); int s = Convert.ToInt32(Console.ReadLine()); for (int i = 0; i < szamok.Length; i++) { szamok[i] *= s; } break;
+                    case "d": vege = false; break;
+                    default: Console.WriteLine("Nem jó megadás"); break;
+                }
+            } while (vege);
+            for (int i = 0; i < szamok.Length; i++)
+            {
+                Console.WriteLine(szamok[i]);
+            }
 
 
 
