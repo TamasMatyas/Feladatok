@@ -101,7 +101,8 @@ namespace Feladatok
                 Console.Write($"Mi legyen a(z) {i + 1}. díj: ");
                 dijak[i] = Console.ReadLine();
             }
-            for (int i = 0; i < nyertesek.Length; i++)
+            } while (kesz);
+            for (int k = 0; k < dijak.Length; k++)
             {
                 
             }
