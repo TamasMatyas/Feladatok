@@ -1,4 +1,7 @@
-﻿namespace Feladatok
+﻿using System.ComponentModel;
+using System.Threading.Channels;
+
+namespace Feladatok
 {
     internal class Program
     {
@@ -84,10 +87,34 @@
 
 
         }
+        static void Karneval()
+        {
+            int[] jegyek = new int[100];
+            string[] dijak = new string[5];
+            int[] nyertesek = new int[5];
+            for (int i = 0; i < jegyek.Length; i++)
+            {
+                jegyek[i] = i + 1;
+            }
+            for (int i = 0; i < dijak.Length; i++)
+            {
+                Console.Write($"Mi legyen a(z) {i + 1}. díj: ");
+                dijak[i] = Console.ReadLine();
+            }
+            for (int i = 0; i < nyertesek.Length; i++)
+            {
+                
+            }
+
+
+
+
+        }
         static void Main(string[] args)
         {
             //F05();
-            F14();
+            //F14();
+            Karneval();
         }
     }
 }
