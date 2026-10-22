@@ -92,23 +92,39 @@ namespace Feladatok
             int[] jegyek = new int[100];
             string[] dijak = new string[5];
             int[] nyertesek = new int[5];
-            for (int i = 0; i < jegyek.Length; i++)
+            for (int k = 0; k < jegyek.Length; k++)
             {
-                jegyek[i] = i + 1;
+                jegyek[k] = k + 1;
             }
-            for (int i = 0; i < dijak.Length; i++)
+            for (int j = 0; j < dijak.Length; j++)
             {
-                Console.Write($"Mi legyen a(z) {i + 1}. díj: ");
-                dijak[i] = Console.ReadLine();
+                Console.Write($"Mi legyen a(z) {j + 1}. díj: ");
+                dijak[j] = Console.ReadLine();
             }
+            bool kesz = true;
+            int i = 0;
+            do
+            {
+                int x = r.Next(0, 101);
+                bool benne = false;
+                foreach (int j in nyertesek)
+                {
+                    if (j != x && !benne)
+                    {
+                        nyertesek[i] = x;
+                        i++;
+                        benne = true;
+                    }
+                }
+                if (i == nyertesek.Length)
+                {
+                    kesz = false;
+                }
             } while (kesz);
             for (int k = 0; k < dijak.Length; k++)
             {
-                
+                Console.WriteLine($"{dijak[k]} --- {nyertesek[k]}. sorszám");
             }
-
-
-
 
         }
         static void Main(string[] args)
